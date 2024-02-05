@@ -6,13 +6,13 @@
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:21:16 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/03 12:46:48 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/05 18:07:38 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
@@ -22,4 +22,5 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i ++;
 	}
+	return (i);
 }

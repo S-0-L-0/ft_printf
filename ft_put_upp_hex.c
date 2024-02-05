@@ -6,15 +6,15 @@
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 13:11:14 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/03 13:17:35 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/05 19:21:05 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int digcount(unsigned long long int n)
+int	digcount(unsigned long long int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -27,12 +27,13 @@ int digcount(unsigned long long int n)
 	return (i);
 }
 
-void	ft_put_upp_hex(unsigned long long int num)
+int	ft_put_upp_hex(unsigned long long int num)
 {
-	char		digits[] = "0123456789ABCDEF";
+	char		digits[17];
 	char		*str;
 	int			i;
 
+	*digits = "0123456789ABCDEF";
 	i = digcount(num);
 	str = (char *)malloc((i + 1) * sizeof(char));
 	if (!str)
@@ -52,4 +53,5 @@ void	ft_put_upp_hex(unsigned long long int num)
 		write(1, &str[i], 1);
 		i ++;
 	}
+	return (i);
 }

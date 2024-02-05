@@ -6,25 +6,27 @@
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 10:43:42 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/03 13:18:17 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/05 19:17:54 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
+	int	i;
+
+	i = 0;
 	if (nb == -2147483648)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		write(1, "147483648", 9);
+		write(1, "-2147483648", 11);
+		return (11);
 	}
 	else if (nb < 0)
 	{
 		ft_putchar('-');
-		nb *= -1;
-		ft_putnbr(nb);
+		i ++;
+		ft_putnbr(nb * (-1));
 	}
 	else if (nb > 9)
 	{
@@ -32,5 +34,9 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb % 10);
 	}
 	else
+	{
 		ft_putchar(nb + 48);
+		i ++;
+	}
+	return (i);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_low_hex.c                                   :+:      :+:    :+:   */
+/*   ft_put_pointer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 13:16:30 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/05 19:30:04 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/05 19:29:33 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	digcount(unsigned long long int n)
 	return (i);
 }
 
-int	ft_put_low_hex(unsigned long long int num)
+void	ft_put_pointer(unsigned long long int num)
 {
 	char		digits[17];
 	char		*str;
@@ -48,10 +48,8 @@ int	ft_put_low_hex(unsigned long long int num)
 		i --;
 	}
 	i = 0;
-	while (str[i] != '\0')
-	{
+	write(1, "0x", 2);
+	while (str[i++] != '\0')
 		write(1, &str[i], 1);
-		i ++;
-	}
-	return (i);
+	return (i + 2);
 }

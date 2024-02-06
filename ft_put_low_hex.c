@@ -6,13 +6,13 @@
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 13:16:30 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/05 19:30:04 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/06 17:18:11 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	digcount(unsigned long long int n)
+static int	digcount(unsigned int n)
 {
 	int	i;
 
@@ -27,17 +27,15 @@ int	digcount(unsigned long long int n)
 	return (i);
 }
 
-int	ft_put_low_hex(unsigned long long int num)
+int	ft_put_low_hex(unsigned int num, char *digits)
 {
-	char		digits[17];
 	char		*str;
 	int			i;
 
-	*digits = "0123456789abcdef";
 	i = digcount(num);
 	str = (char *)malloc((i + 1) * sizeof(char));
 	if (!str)
-		return ;
+		return (0);
 	str[i--] = '\0';
 	if (num == 0)
 		str[i] = '0';
@@ -53,5 +51,6 @@ int	ft_put_low_hex(unsigned long long int num)
 		write(1, &str[i], 1);
 		i ++;
 	}
+	free (str);
 	return (i);
 }

@@ -6,11 +6,11 @@
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 22:05:56 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/05 19:18:38 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/06 15:53:43 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {

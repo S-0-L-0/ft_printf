@@ -1,6 +1,7 @@
 NAME = libftprintf.a
 
-SOURCES = 
+SOURCES = ft_printf.c ft_put_upp_hex.c ft_put_low_hex.c ft_pointer.c \
+ft_putnbr.c ft_put_uns_nbr.c ft_putchar.c ft_putstr.c
 
 OBJS = $(SOURCES:.c=.o)
 

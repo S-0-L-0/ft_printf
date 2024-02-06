@@ -6,17 +6,21 @@
 /*   By: edforte <edforte@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:21:16 by edforte           #+#    #+#             */
-/*   Updated: 2024/02/05 18:07:38 by edforte          ###   ########.fr       */
+/*   Updated: 2024/02/06 16:57:25 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
+	if (!str)
+	{
+		str = "(null)";
+	}
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
